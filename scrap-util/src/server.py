@@ -19,6 +19,7 @@ def keywords(url: ParseResult) -> str:
         status = 'HTTP/1.1 200 OK'
         header = 'Content-Type: application/vnd.api+json'
         page: str = url.query.split('=')[1]
+    print(urlparse(page))
     content: str = handle_keywords(urlparse(page))
     response = '\r\n'.join([status, header, content])
     return response + '\r\n'
