@@ -1,20 +1,9 @@
 operation: 'keywords'
-workers: 5
+workers: 3
 urls: [
-    'https://httpstat.us/100',
-    'https://httpstat.us/101',
-    'https://httpstat.us/102',
-    'https://httpstat.us/103',
-    'https://httpstat.us/200',
-    'https://httpstat.us/201',
-    'https://httpstat.us/202',
-    'https://httpstat.us/203',
-    'https://httpstat.us/204',
-    'https://httpstat.us/205',
-    'https://httpstat.us/206',
-    'https://httpstat.us/300',
-    'https://httpstat.us/301',
-    'https://httpstat.us/302',
-    'https://httpstat.us/303',
-    'https://httpstat.us/304',
+    'https://docs.aiohttp.org/en/stable/',
+    'https://aiohttp-admin.readthedocs.io/en/latest/',
+    'https://docs.python.org/3.7/library/asyncio.html',
+    'https://www.rust-lang.org/',
+    'https://webassembly.org/',
 ]

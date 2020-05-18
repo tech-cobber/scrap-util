@@ -1,94 +1,35 @@
-url: https://httpstat.us/200
+url: https://aiohttp-admin.readthedocs.io/en/latest/
 status: 200
 data: 
-	0: 2
-	2: 1
-	 : 1
+	admin: 10
+	aiohttp: 6
+	documentation: 4
 
-url: https://httpstat.us/201
-status: 201
-data: 
-	e: 2
-	2: 1
-	0: 1
-
-url: https://httpstat.us/202
-status: 202
-data: 
-	2: 2
-	c: 2
-	e: 2
-
-url: https://httpstat.us/203
-status: 203
-data: 
-	o: 4
-	t: 4
-	n: 3
-
-url: https://httpstat.us/204
-status: 204
-data: 
-
-
-url: https://httpstat.us/205
-status: 205
-data: 
-
-
-url: https://httpstat.us/206
-status: 206
-data: 
-	t: 3
-	 : 2
-	a: 2
-
-url: https://httpstat.us/300
-status: 300
-data: 
-	0: 2
-	 : 2
-	l: 2
-
-url: https://httpstat.us/301
+url: https://docs.aiohttp.org/en/stable/
 status: 200
 data: 
-	 : 2214
-	d: 473
-	<: 432
+	aiohttp: 24
+	server: 11
+	client: 9
 
-url: https://httpstat.us/302
+url: https://docs.python.org/3.7/library/asyncio.html
 status: 200
 data: 
-	 : 2214
-	d: 473
-	<: 432
+	asyncio: 10
+	python: 10
+	level: 7
 
-url: https://httpstat.us/303
+url: https://webassembly.org/
 status: 200
 data: 
-	 : 2214
-	d: 473
-	<: 432
+	webassembly: 12
+	web: 7
+	wasm: 5
 
-url: https://httpstat.us/304
-status: 304
+url: https://www.rust-lang.org/
+status: 200
 data: 
-
-
-url: https://httpstat.us/100
-status: 0
-data: TimeoutError
-
-url: https://httpstat.us/101
-status: 0
-data: TimeoutError
-
-url: https://httpstat.us/102
-status: 0
-data: TimeoutError
-
-url: https://httpstat.us/103
-status: 0
-data: TimeoutError
+	rust: 29
+	community: 7
+	documentation: 5
 
