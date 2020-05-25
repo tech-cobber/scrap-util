@@ -1,5 +1,5 @@
 operation: 'keywords'
-workers: 3
+workers: 5
 urls: [
     'https://docs.aiohttp.org/en/stable/',
     'https://aiohttp-admin.readthedocs.io/en/latest/',

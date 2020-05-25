@@ -1,11 +1,16 @@
 import asyncio
 import aiohttp
-import uvloop
+from concurrent.futures import ThreadPoolExecutor
+from functools import partial
 from typing import List
 from .tracing import trace_config
 from .utils import parse_args, get_job, write_to_file, Result
 from .handlers import keywords
-asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
+try:
+    import uvloop
+    asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
+except ImportError:
+    print("Hey buddy, you should definetly try uvloop!")
 
 
 class Job:
@@ -24,15 +29,19 @@ class Job:
         self.semaphore = asyncio.Semaphore(workers)
         self.results = []
 
-    def scrap(self, data: str) -> str:
-        ''' Synchronous! '''
-        return Job.operations[self.operation](data)
+    async def scrap(self, data: str) -> str:
+        loop = asyncio.get_running_loop()
+        with ThreadPoolExecutor() as pool:
+            result = await loop.run_in_executor(pool, partial(
+                    Job.operations[self.operation], data=data))
+            return result
 
     async def get(self, session: aiohttp.ClientSession, url: str):
         async with self.semaphore:
             try:
                 async with session.get(url, timeout=5) as response:
-                    data = self.scrap(await response.text())
+                    text = await response.text()
+                    data = await self.scrap(text)
                     result = Result(url, response.status, data)
             except Exception as exception:
                 result = Result(url, 0, type(exception).__name__)
